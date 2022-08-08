@@ -15,7 +15,9 @@ code {
 /* Will justify the logo, search bar and profile icon. Don't forget to make the search bar a 
 specific proportion once it comes down to it */
 
-navbar {
+nav  {
+  height: 55px;
+  width: 100%;
   position: fixed;
   background-color: white;
   display: flex;
@@ -23,6 +25,26 @@ navbar {
   z-index: 1;
 }
 
+nav img {
+  height: 30px;
+  padding: 10px;
+}
+
+nav form {
+  height: 25px;
+  margin: 15px;
+  width: 300px;
+}
+nav input {
+  height: 100%;
+  width: 70%; 
+  border: 1px, solid;
+  border-color: #e7e7e7;
+}
+nav button {
+  width: 20%;
+  height: 100%;
+}
 .post {
   background-color: white;
 }
