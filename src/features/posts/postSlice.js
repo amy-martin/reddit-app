@@ -9,3 +9,7 @@ export const postSlice = createSlice({
         }
     }
 })
+
+export default postSlice.reducer;
+export const { updatePost } = postSlice.actions;
+export const selectPost = state => state.post;
