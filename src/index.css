@@ -13,6 +13,7 @@ main {
   position: relative;
   top: 55px;
   color: black;
+  
 }
 
 code {
@@ -81,7 +82,7 @@ a:hover.post {
 a:active.post {
   text-decoration: none;
 }
-.post-listings {
+.post-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,14 +99,43 @@ a:active.post {
   color: black;
   border-radius: 5px;
   border: 1px solid #c8c6c6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+  text-decoration: none;
 }
 
 .post h1 {
   font-size: 20px;
-  
+  font-weight: 400
 }
 
-.post {
+.clicked-post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Comment Styling */ 
+.comments-container {
+  height: auto;
+  width: 80%;
+}
+
+.comment {
+  background-color: white;
+
+  padding: 10px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #c8c6c6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 13px;
   text-decoration: none;
+
+}
+
+.comment h3 {
+  font-weight: 400;
+  font-size: 13px;
 }

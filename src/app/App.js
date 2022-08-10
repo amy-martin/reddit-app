@@ -1,21 +1,22 @@
-import { Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { NavBar } from '../components/NavBar'
 import PostListings from '../features/posts/PostListings';
-
+import Post from '../features/posts/Post'
 function App() {
   return (
-    // <Router>
+    <Router>
     <div>
       <NavBar />
       <main>
-        {/* <Routes>
-        </Routes> */}
-        <PostListings />
+        <Routes>
+          <Route path='' element={<PostListings />} />
+          <Route path="/posts/:id" element={<Post />} />
+        </Routes>
       </main>
       </div>
       
-    // </Router>
+    </Router>
   );
 }
 
