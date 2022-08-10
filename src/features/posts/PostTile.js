@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 export default function PostTile(props) {
     const {post} = props;
     const id = post.id
-    console.log(post)
    return (
     <Link className='post' to={`/posts/${id}`}>
         <h1>{post.title}</h1>
