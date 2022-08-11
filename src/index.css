@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -34,36 +37,100 @@ nav  {
   justify-content: space-between;
   z-index: 1;
 }
+nav .img-container {
+  width: 122px;
+}
+
+nav .img-container .user-icon-img {
+  float: right;
+}
 
 nav img {
-  height: 30px;
+  height: 55px;
   padding: 10px;
 }
 
-
 nav form {
   height: 25px;
-  margin: 15px;
-  width: 300px; 
+  margin-top: 15px;
+  width: 205px; 
   border: 1px solid #c8c6c6;
   border-radius: 10px;
 }
 
 nav input[type=search] {
   height: 100%;
-  width: 225px; 
+  width: 50%;
   border: none;
   border-radius: 10px;
 }
 nav button {
-  width: 75px;
+  width: 50%;
   height: 100%;
   border: none;
   border-radius: 10px;
 }
 
+/* Post Page Styling */
+.post-page {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+/* Filter Bar Styling */
+.filter-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.filter-bar {
+  width: 75%;
+  background-color: white;
+  padding: 10px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #c8c6c6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+}
 
+/* Button and Drop Down Menu Styling */
 
+.filter-bar button {
+  background-color: #c8c6c6;
+  border: none;
+  border-radius: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+}
+
+.filter-bar button:active {
+  background-color: #a9a7a7;
+}
+.filter-bar button::after {
+  background-color: #a9a7a7;
+}
+.filter-bar .popularity-filter {
+  min-width: 5%
+}
+.filter-bar .country-filter {
+  padding: 10px;
+  min-width: 10%;
+  max-width: 15%
+}
+.filter-bar .votes-filter {
+  min-width:10%;
+}
+.filter-bar .time-frame-filter {
+  min-width: 10%;
+  padding: 10px;
+}
 
 /* Post Styling */
 
@@ -92,7 +159,7 @@ a:active.post {
   background-color: white;
   height: auto;
   width: 75%;
-  margin-bottom: 3%;
+  margin: 10px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
@@ -119,7 +186,7 @@ a:active.post {
 /* Comment Styling */ 
 .comments-container {
   height: auto;
-  width: 80%;
+  width: 75%;
 }
 
 .comment {
@@ -139,3 +206,6 @@ a:active.post {
   font-weight: 400;
   font-size: 13px;
 }
+
+
+

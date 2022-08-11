@@ -272,18 +272,20 @@ export function FilterBar() {
     };
     
     return (
-        <div className="filter-bar">
-            <button className='popularity-filter' onClick={handlePopularityClick}></button>
-            <select className='country-filter' onChange={handleCountrySelection}>
-                {countryList.map((country, index) => <option key={index}>{country}</option>)}
-            </select>
-            <button className='votes-filter' onClick={handleVotesClick}></button>
-            <select className= 'time-frame-filter' onChange={handleTimeFrameSelection}>
-                <option>Day</option>
-                <option>Week</option>
-                <option>Month</option>
-                <option>Year</option>
-            </select>
+        <div className="filter-bar-container">
+            <div className="filter-bar">
+                <button className='popularity-filter' onClick={handlePopularityClick}>Hot</button>
+                <select className='country-filter' onChange={handleCountrySelection}>
+                    {countryList.map((country, index) => <option key={index}>{country}</option>)}
+                </select>
+                <button className='votes-filter' onClick={handleVotesClick}>Top Voted</button>
+                <select className= 'time-frame-filter' onChange={handleTimeFrameSelection}>
+                    <option>Day</option>
+                    <option>Week</option>
+                    <option>Month</option>
+                    <option>Year</option>
+                </select>
+            </div>
         </div>
     )
 }
