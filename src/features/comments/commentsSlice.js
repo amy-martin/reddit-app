@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const commentsSlice = createSlice({
     name: 'comments',
     initialState: {
+        comments: {
         1: {
             id: 1,
             postTitle: 'I love Hector',
@@ -14,6 +15,8 @@ export const commentsSlice = createSlice({
             comment: "Who doesn't"
         }
     },
+    isLoadingComments: false,
+    failedToLoadComments: false},
     extraReducers: {
         // retrieveComments: (state, action) => {
 
@@ -22,4 +25,4 @@ export const commentsSlice = createSlice({
 })
 
 export default commentsSlice.reducer;
-export const selectComments = state => state.comments;
+export const selectComments = state => state.comments.comments;

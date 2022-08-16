@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { NavBar } from '../components/NavBar'
-import {PostPage} from '../features/posts/PostPage';
+import {PostsPage} from '../features/posts/PostsPage';
 import Post from '../features/posts/Post'
+import { FilterBar } from '../features/filter-bar/FilterBar';
 function App() {
   return (
     <Router>
@@ -10,8 +11,12 @@ function App() {
       <NavBar />
       <main>
         <Routes>
-          <Route path='' element={<PostPage />} />
-          <Route path="/posts/:id" element={<Post />} />
+          <Route path='' element={<PostsPage />} />
+          <Route path='/:filter' element={<PostsPage />} />
+          <Route path='/:r/:filter' element={<PostsPage />} />
+          <Route path='/search/:searchQuery' element={<PostsPage />} />
+          <Route path='/r/:subreddit/comments' element={<Post />} />
+          
         </Routes>
       </main>
       </div>

@@ -6,7 +6,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e7e7e7;
+  background-color: #dae0e6;
   display: flex;
   flex-direction: column;
   
@@ -72,11 +72,17 @@ nav button {
 }
 
 /* Post Page Styling */
-.post-page {
+.posts-page {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
+}
+.loading-state {
+  display: flex;
+  justify-content: center;
+  color:#615f5f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 /* Filter Bar Styling */
 .filter-bar-container {
@@ -124,10 +130,10 @@ nav button {
   min-width: 10%;
   max-width: 15%
 }
-.filter-bar .votes-filter {
+.filter-bar .top-filter {
   min-width:10%;
 }
-.filter-bar .time-frame-filter {
+.filter-bar .new-filter {
   min-width: 10%;
   padding: 10px;
 }

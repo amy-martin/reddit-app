@@ -3,23 +3,23 @@ import { createSlice } from "@reduxjs/toolkit";
 export const filtersSlice = createSlice({
     name: 'filters',
     initialState: {
-        byPopularity: true,
-        country: '',
-        byVotes: false,
-        timeFrame: ''
+        popularityFilter: true,
+        geoFilter: '',
+        votesFilter: false,
+        timeFrameFilter: ''
     },
     reducers: {
         updateByPopularity: (state, action) => {
-            state.byPopularity = action.payload
+            state.popularityFilter = action.payload
         },
         updateCountry: (state, action) => {
-            state.country = action.payload
+            state.geoFilter = action.payload
         },
         updateByVotes: (state, action) => {
-            state.byVotes = action.payload
+            state.votesFilter = action.payload
         },
         updateTimeFrame: (state, action) => {
-            state.timeFrame = action.payload
+            state.timeFrameFilter = action.payload
         }
 }
 })
