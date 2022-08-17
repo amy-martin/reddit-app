@@ -14,6 +14,7 @@ function App() {
           <Route path='' element={<PostsPage />} />
           <Route path='/:filter' element={<PostsPage />} />
           <Route path='/:r/:filter' element={<PostsPage />} />
+          <Route path= '/:r/:filter/:secondFilter' element={<PostsPage />} />
           <Route path='/search/:searchQuery' element={<PostsPage />} />
           <Route path='/r/:subreddit/comments' element={<Post />} />
           
