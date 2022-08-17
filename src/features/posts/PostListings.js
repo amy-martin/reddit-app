@@ -11,7 +11,7 @@ export default function PostListings (props) {
     const {filterSelection, searchQuery} = props;
     const postsAreLoading = useSelector(isLoadingPosts)
     const postListings = useSelector(selectPosts)
-    
+    console.log(postListings)
     useEffect(() => {
         if (!filterSelection && !searchQuery) {
             dispatch(retrievePosts())
@@ -27,7 +27,6 @@ export default function PostListings (props) {
     if (postsAreLoading) {
         return <div className="loading-state"><h1>Loading...</h1></div>
     }
-    console.log(postListings)
     return (
         <section className="post-container">
             {postListings.data?.children.map(post => <PostTile post={post.data} key={post.data.id}/>)}

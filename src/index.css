@@ -165,11 +165,12 @@ a:active.post {
 .post {
   background-color: white;
   height: auto;
+  min-width: 400px;;
   width: 75%;
   margin: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   color: black;
   border-radius: 5px;
   border: 1px solid #c8c6c6;
@@ -192,8 +193,9 @@ a:active.post {
 
 .post-info {
   display: flex;
-  height: 30px;
+  height: 20px;
   align-items: baseline;
+  width: 100%
   
 }
 
@@ -208,9 +210,14 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:#615f5f
 }
-/* .post-content {
-  
-} */
+.post-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+.post-title {
+  padding-right: 10px;
+}
 
 /* Comment Button Styling */
 
