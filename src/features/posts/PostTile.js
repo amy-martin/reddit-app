@@ -15,6 +15,7 @@ export default function PostTile(props) {
         <h1>{post.title}</h1>
         {(post.thumbnail !== 'self' && post.thumbnail !== 'nsfw')? <img className='thumbnail' src={post.thumbnail}/>: null}
         </div>
+        <Link className='comment-button' to={post.permalink}>{post.num_comments} Comments</Link>
     </Link>
    )
 }

@@ -123,26 +123,29 @@ nav button {
   border-radius: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 10px;
-  width: 10%;
+  width: 12%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 13.5px;
   color:#615f5f;
 }
 
+.filter-bar button:link {
+  background-color: #a9a7a7;
+}
+.filter-bar button:visited {
+  background-color: #a9a7a7;
+}
+.filter-bar button:hover {
+  background-color:#dae0e6;
+}
 .filter-bar button:active {
-  background-color: #a9a7a7;
+  background-color:#dae0e6;
 }
-.filter-bar button::after {
-  background-color: #a9a7a7;
-}
-
 /* Post Styling */
 
 a:link.post  {
   text-decoration: none;
-  
 }
-
 a:visited.post {
   text-decoration: none;
 }
@@ -205,9 +208,19 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:#615f5f
 }
-.post-content {
+/* .post-content {
   
+} */
+
+/* Comment Button Styling */
+
+.comment-button {
+  font-size: 11px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:#615f5f
+
 }
+
 /* Comment Styling */ 
 .comments-container {
   height: auto;
