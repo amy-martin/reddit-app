@@ -14,7 +14,7 @@ export default function SearchBar() {
     } 
     return (
         <form onSubmit={handleSubmit}>
-            <input type='search' id='query' name='q' placeholder='Search...' onChange={e => setSearchTerm(e.target.value)} value={searchTerm}>  
+            <input type='search' id='query' name='q' placeholder='Search Reddit' onChange={e => setSearchTerm(e.target.value)} value={searchTerm}>  
             </input>
             <button>Search</button>
         </form>

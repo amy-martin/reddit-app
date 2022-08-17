@@ -6,19 +6,15 @@ export default function PostTile(props) {
     const {post} = props;
     const id = post.id
    return (
-    <Link className='post' to={post.permalink}>
-        <h6 className="subreddit-info">{post.subreddit_name_prefixed}</h6>
-        <h6 className="post-info">Posted by {post.author} </h6>
+    <Link className='post'to={post.permalink}>
+        <div className= 'post-info'>
+            <h6 className='subreddit-info'>{post.subreddit_name_prefixed}</h6>
+            <p className='author-info'>Posted by {post.author} </p>
+        </div>
         <div className='post-content'>
         <h1>{post.title}</h1>
-        {post.thumbnail ? <img className='thumbnail' src={post.thumbnail}/>: null}
+        {(post.thumbnail !== 'self' && post.thumbnail !== 'nsfw')? <img className='thumbnail' src={post.thumbnail}/>: null}
         </div>
     </Link>
    )
 }
-
-
-// Was in post-content div
-// {post.type === 'media' && <embed src= {post.content.link}/> }
-// {post.type === 'link' && <div className='link-post'><a href= {post.content.link}/><img src={post.linkPic}/></div>}
-// {post.type === 'text' && post.content}
