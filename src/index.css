@@ -123,7 +123,7 @@ nav button {
   border-radius: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 10px;
-  width: 12%;
+  min-width: 12%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 13.5px;
   color:#615f5f;
@@ -162,6 +162,12 @@ a:active.post {
   justify-content: center;
   align-items: center;
 }
+.clicked-post-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .post {
   background-color: white;
   height: auto;
@@ -184,12 +190,7 @@ a:active.post {
   font-weight: 400
 }
 
-.clicked-post-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .post-info {
   display: flex;
@@ -231,7 +232,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 /* Comment Styling */ 
 .comments-container {
   height: auto;
-  width: 75%;
+  width: 100%;
 }
 
 .comment {

@@ -1,8 +1,14 @@
 import React from "react";
 
 export function Comment(props) {
-    const {comment} = props
+    const {commentData} = props
+    console.log(commentData)
     return (
-        <div className='comment'><h3>{comment.comment}</h3></div>
+        <div className='comment'>
+            <div className= 'comment-info'>
+                <p className='author-info'>{commentData.author}</p>
+            </div>
+            <h3>{commentData.body}</h3>
+        </div>
     )
 }

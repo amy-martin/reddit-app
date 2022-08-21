@@ -11,6 +11,8 @@ export function PostsPage() {
     let filterSelection
     let searchQuery
     
+
+
     filterSelection = r ? `r/${filter}`: filter
 
     searchQuery = searchParams.get('q') ? `?${queryString}`: null

@@ -1,16 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectComments } from "./commentsSlice";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { isLoadingComments, retrieveComments, selectComments } from "./commentsSlice";
 import { Comment } from "./Comment";
 
 export function Comments(props) {
     //Dispatch action to retrieve comments from api and update state from useEffect hook most likely
-    const {post} = props
-    const commentsList = useSelector(selectComments);
-    const postComments = Object.values(commentsList).filter(comment => post.title === comment.postTitle)
+    const {comments} = props
+    // console.log(comments)
     return (
         <section className='comments-container'>
-            {postComments.map(comment => <Comment comment={comment} key={comment.id}/>)}
+            {Object.values(comments)?.map((comment, i) => <Comment commentData={comment.data} key={i}/>)}
         </section>
     )
 }

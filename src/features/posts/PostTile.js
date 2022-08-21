@@ -9,15 +9,29 @@ export default function PostTile(props) {
 
     if (post.is_video) {
         postPreviewContent = (
-        <video className="media" style={{height:`${post.media.reddit_video.height}`, width: `${post.media.reddit_video.width}`}}>
-            <source src={post.media.reddit_video.dash_url} type = 'mpd' />
-            <source src={post.media.reddit_video.fallback_url} type = 'mp4'/>
-            Your Browser Does Not Support This Video
-        </video>
+            <div className='post-content'>
+                <h1 className="post-title post-item">{post.title}</h1>
+                <video className="media" controls>
+                    {/* <source src={post.media.reddit_video.dash_url} type = 'mpd' /> */}
+                    <source src={post.media.reddit_video.fallback_url} type = 'video/mp4'/>
+                </video>
+                </div>
         )
+    } else if (post.post_hint == 'image') {
+        postPreviewContent = (
+            <div className='post-content'>
+                <h1 className="post-title post-item">{post.title}</h1>
+                <img src={post.url} alt='Image not loaded'/>
+            </div>
+        )
+       
     } else {
-        postPreviewContent = (post.thumbnail !== 'self' && post.thumbnail !== 'nsfw' && post.thumbnail !== 'default' ) ? <img className='post-item thumbnail' src={post.thumbnail} style={{height: `${post.thumbnail_height}`, width: `${post.thumbnail_width}` }}/>: null
-    }
+    postPreviewContent = (
+        <div className='post-content with-thumbnail'>
+                <h1 className="post-title post-item">{post.title}</h1>
+                {(post.thumbnail !== 'self' && post.thumbnail !== 'nsfw' && post.thumbnail !== 'default' ) ? <img className='post-item thumbnail' src={post.thumbnail} style={{height: `${post.thumbnail_height}`, width: `${post.thumbnail_width}` }}/>: null}
+        </div>
+    ) }
     
 
     return (
@@ -26,10 +40,7 @@ export default function PostTile(props) {
                 <h6 className='subreddit-info'>{post.subreddit_name_prefixed}</h6>
                 <p className='author-info'>Posted by {post.author}</p>
             </div>
-            <div className='post-content'>
-            <h1 className="post-title post-item">{post.title}</h1>
             {postPreviewContent}
-            </div>
             <p className='comment-button' to={post.permalink}>{post.num_comments} Comments</p>
         </Link>
     )

@@ -1,26 +1,46 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectPosts } from "./postsSlice";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { isLoadingPost, selectPost, failedToLoadPost } from "./postSlice";
 import { Comments } from "../comments/Comments";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { retrievePost } from "./postSlice";
+import { failedToLoadComments, isLoadingComments, retrieveComments, selectComments } from "../comments/commentsSlice";
 
 export default function Post() {
-    const posts = useSelector(selectPosts)
-    const {id} = useParams()
-    const post = posts[id]
-    return (
-        <section className='clicked-post-container'>
-            <div className='post'>
-                <h1>{post.title}</h1>
-                <div className='post-content'>
-                    {post.type === 'media' && <embed src= {post.content.link}/> }
-                    {post.type === 'link' && <div className='link-post'><a href= {post.content.link}/><img src={post.linkPic}/></div>}
-                    {post.type === 'text' && post.content}
-                </div>
-            </div>
-            <Comments post={post}/>
-        </section>
-        
-        
-    )
+    const permalink = useLocation().pathname
+    const post = useSelector(selectPost);
+    const postIsLoading = useSelector(isLoadingPost);
+    const comments = useSelector(selectComments);
+    const commentsAreLoading = useSelector(isLoadingComments);
+    const postFailedToLoad = useSelector(failedToLoadPost);
+    const commentsFailedToLoad = useSelector(failedToLoadComments)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(retrievePost(permalink))
+        dispatch(retrieveComments(permalink))
+    }, [dispatch, permalink])
+
+    if (postIsLoading || commentsAreLoading) {
+        return <div className="loading-state"><h1>Loading...</h1></div>
+    }
+
+    if (!postIsLoading && !postFailedToLoad && !commentsAreLoading && !commentsFailedToLoad && Object.keys(comments).length !== 0){
+        return (
+            <section className='clicked-post-container'>
+                <div className='post'>
+                    <div className= 'post-info'>
+                        <h6 className='subreddit-info'>{post.subreddit_name_prefixed}</h6>
+                        <p className='author-info'>Posted by {post.author}</p>
+                    </div>
+                    <div className='post-content'>
+                    <h1 className="post-title post-item">{post.title}</h1>
+                    
+                    </div>
+                    <p className='comment-button' to={post.permalink}>{post.num_comments} Comments</p>
+                    <Comments comments={comments}/>
+                    </div>
+            </section>
+            
+            )}
 }

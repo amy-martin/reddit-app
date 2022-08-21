@@ -11,7 +11,6 @@ export default function PostListings (props) {
     const {filterSelection, searchQuery} = props;
     const postsAreLoading = useSelector(isLoadingPosts)
     const postListings = useSelector(selectPosts)
-    console.log(postListings)
     useEffect(() => {
         if (!filterSelection && !searchQuery) {
             dispatch(retrievePosts())
@@ -23,7 +22,7 @@ export default function PostListings (props) {
             dispatch(retrieveSearchPosts(searchQuery))
         }
     }, [dispatch, filterSelection, searchQuery])
-
+    console.log(postListings)
     if (postsAreLoading) {
         return <div className="loading-state"><h1>Loading...</h1></div>
     }
