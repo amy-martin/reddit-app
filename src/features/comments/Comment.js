@@ -2,7 +2,6 @@ import React from "react";
 
 export function Comment(props) {
     const {commentData} = props
-    console.log(commentData)
     return (
         <div className='comment'>
             <div className= 'comment-info'>

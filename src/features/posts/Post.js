@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isLoadingPost, selectPost, failedToLoadPost } from "./postSlice";
 import { Comments } from "../comments/Comments";
+import PostTile  from "../posts/PostTile"
 import { useLocation } from "react-router-dom";
 import { retrievePost } from "./postSlice";
 import { failedToLoadComments, isLoadingComments, retrieveComments, selectComments } from "../comments/commentsSlice";
@@ -28,18 +29,11 @@ export default function Post() {
     if (!postIsLoading && !postFailedToLoad && !commentsAreLoading && !commentsFailedToLoad && Object.keys(comments).length !== 0){
         return (
             <section className='clicked-post-container'>
-                <div className='post'>
-                    <div className= 'post-info'>
-                        <h6 className='subreddit-info'>{post.subreddit_name_prefixed}</h6>
-                        <p className='author-info'>Posted by {post.author}</p>
-                    </div>
-                    <div className='post-content'>
-                    <h1 className="post-title post-item">{post.title}</h1>
+                {console.log(post)}
                     
-                    </div>
-                    <p className='comment-button' to={post.permalink}>{post.num_comments} Comments</p>
+                    <PostTile post={post} key={post.id}/>
                     <Comments comments={comments}/>
-                    </div>
+                    {/* </div> */}
             </section>
             
             )}

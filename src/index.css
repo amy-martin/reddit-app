@@ -101,7 +101,7 @@ nav button {
   
 }
 .filter-bar {
-  width: 75%;
+  width: 600px;
   background-color: white;
   padding: 10px;
   color: black;
@@ -171,8 +171,7 @@ a:active.post {
 .post {
   background-color: white;
   height: auto;
-  min-width: 400px;;
-  width: 75%;
+  width: 600px;
   margin: 10px;
   padding-left: 20px;
   padding-right: 20px;
@@ -190,8 +189,6 @@ a:active.post {
   font-weight: 400
 }
 
-
-
 .post-info {
   display: flex;
   height: 20px;
@@ -199,6 +196,11 @@ a:active.post {
   width: 100%
   
 }
+
+.post-link {
+  text-decoration: none;
+}
+
 
 .subreddit-info{
 margin-right: 10px;
@@ -232,7 +234,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 /* Comment Styling */ 
 .comments-container {
   height: auto;
-  width: 100%;
+  width: 600px;
 }
 
 .comment {
@@ -253,5 +255,28 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 13px;
 }
 
+.media {
+  display: flex;
+  justify-content: center;
+  max-height: 512px;
+  width: 512px;
+}
 
+.media-item {
+  max-height: 512px;
+  max-width: 512px;
+}
 
+.link-post {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  
+}
+.link-post h1 {
+  width: 400px
+}
+.thumbnail {
+  max-width: 90px;
+  margin: 10px;
+}
