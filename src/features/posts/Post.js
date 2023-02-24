@@ -29,8 +29,7 @@ export default function Post() {
     if (!postIsLoading && !postFailedToLoad && !commentsAreLoading && !commentsFailedToLoad && Object.keys(comments).length !== 0){
         return (
             <section className='clicked-post-container'>
-                {console.log(post)}
-                    
+                    {console.log(post)}
                     <PostTile post={post} key={post.id}/>
                     <Comments comments={comments}/>
                     {/* </div> */}

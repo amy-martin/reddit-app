@@ -101,7 +101,7 @@ nav button {
   
 }
 .filter-bar {
-  width: 600px;
+  min-width: 600px;
   background-color: white;
   padding: 10px;
   color: black;
@@ -123,7 +123,7 @@ nav button {
   border-radius: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 10px;
-  min-width: 12%;
+  width: 80px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 13.5px;
   color:#615f5f;
@@ -142,26 +142,27 @@ nav button {
   background-color:#dae0e6;
 }
 /* Post Styling */
-
+/* 
 a:link.post  {
   text-decoration: none;
 }
 a:visited.post {
   text-decoration: none;
 }
-a:hover.post {
+.post a:hover {
   text-decoration: none;
   border: .25px solid black;
 }
 a:active.post {
   text-decoration: none;
-}
+} */
 .post-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .clicked-post-container {
   display: flex;
   flex-direction: column;
@@ -270,13 +271,26 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .link-post {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   padding-top: 10px;
   
 }
 .link-post h1 {
   width: 400px
 }
-.thumbnail {
-  max-width: 90px;
+.thumbnail img{
+  height: auto;
   margin: 10px;
+  border-radius: 5px;
+  border: solid .5px blue
+
+}
+
+
+.hyperlink {
+  font-size: 10px;
+}
+.hyperlink:hover {
+  text-decoration: none;
 }

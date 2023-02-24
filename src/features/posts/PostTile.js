@@ -35,15 +35,24 @@ export default function PostTile(props) {
        
     } else if (post.post_hint == 'link') {
         postPreviewContent = (
-            <div className='post-content with-thumbnail link-post'>
+            <div className="link-post-container">
+                <div className='post-content with-thumbnail link-post'>
                     <h1 className="post-title post-item">{post.title}</h1>
                     <div className="thumbnail">
-                    <a href ={post.url}>{(post.thumbnail !== 'self' && post.thumbnail !== 'nsfw' && post.thumbnail !== 'default' ) ? <img  src={post.thumbnail} style={{height: `${post.thumbnail_height}`, width: `${post.thumbnail_width}` }}/>: null}</a>
-                    <p>{post.selftext}</p>
+                        <a href ={post.url}> {
+                            (post.thumbnail !== 'self' && post.thumbnail !== 'nsfw' && post.thumbnail !== 'default' ) ? <img  src={post.thumbnail} style={{height: `${post.thumbnail_height}`, width: `${post.thumbnail_width}` }}/>: 
+                            // <div style={{color: 'white', width: '100px', height: '80px', border: 'solid .5px blue', borderRadius: '5px'}}></div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Echo_link-blue_icon_slanted.svg/1024px-Echo_link-blue_icon_slanted.svg.png" style={{height: '50px', width: '50px', border: 'none'}}/>
+                            }
+                        </a>
                     </div>
+                    <p>{post.selftext}</p>
+                </div>
+                <a className="hyperlink" href={post.url}>https://{post.domain}/...</a>
             </div>
+
     ) 
-    } else if (post.is_self === true) {
+    } else {
         postPreviewContent = (
             <div class-name="post-content">
                 <h1 className="post-title post-item">{post.title}</h1>
