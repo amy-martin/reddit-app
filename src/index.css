@@ -242,7 +242,6 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 .comment {
   background-color: white;
-
   padding: 10px;
   color: black;
   border-radius: 5px;
@@ -261,12 +260,14 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .media {
   display: flex;
   justify-content: center;
-  max-height: 512px;
+  align-self: center;
+  align-items: center;
+  max-height: auto;
   width: 512px;
 }
 
 .media-item {
-  max-height: 512px;
+  height: auto;
   max-width: 512px;
 }
 
