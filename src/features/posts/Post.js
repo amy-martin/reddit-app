@@ -22,7 +22,7 @@ export default function Post() {
         dispatch(retrieveComments(permalink))
     }, [dispatch, permalink])
 
-    if (postIsLoading || commentsAreLoading) {
+    if (postIsLoading && commentsAreLoading) {
         return <div className="loading-state"><h1>Loading...</h1></div>
     }
 

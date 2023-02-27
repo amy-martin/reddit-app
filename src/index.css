@@ -26,8 +26,10 @@ code {
 
 /* Will justify the logo, search bar and profile icon. Don't forget to make the search bar a 
 specific proportion once it comes down to it */
-
-/* Navigation Bar Stylign */
+.search-bar {
+  width: 600px;
+}
+/* Navigation Bar Styling */
 nav  {
   height: 55px;
   width: 100%;
