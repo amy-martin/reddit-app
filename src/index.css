@@ -1,4 +1,4 @@
-* {
+g* {
   box-sizing: border-box;
 }
 body {
@@ -27,7 +27,7 @@ code {
 /* Will justify the logo, search bar and profile icon. Don't forget to make the search bar a 
 specific proportion once it comes down to it */
 .search-bar {
-  width: 600px;
+  width: 50%
 }
 /* Navigation Bar Styling */
 nav  {
@@ -40,7 +40,9 @@ nav  {
   z-index: 1;
 }
 nav .img-container {
-  width: 122px;
+  max-height: 100%;
+  width: 120px;
+  margin: 10px
 }
 
 nav .img-container .user-icon-img {
@@ -48,8 +50,8 @@ nav .img-container .user-icon-img {
 }
 
 nav img {
-  height: 55px;
-  padding: 10px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 nav form {
@@ -104,8 +106,12 @@ nav button {
 }
 .filter-bar {
   min-width: 600px;
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   background-color: white;
-  padding: 10px;
   color: black;
   border-radius: 5px;
   border: 1px solid #c8c6c6;
@@ -114,7 +120,8 @@ nav button {
   text-decoration: none;
   display: flex;
   justify-content: space-evenly;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* Button and Drop Down Menu Styling */
@@ -174,7 +181,7 @@ a:active.post {
 .post {
   background-color: white;
   height: auto;
-  width: 600px;
+  min-width: 600px;
   margin: 10px;
   padding-left: 20px;
   padding-right: 20px;
