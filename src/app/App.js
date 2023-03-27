@@ -10,15 +10,17 @@ function App() {
     <div>
       <NavBar />
       <main>
-        <Routes>
-          <Route path='' element={<PostsPage />} />
-          <Route path='/:filter' element={<PostsPage />} />
-          <Route path='/:r/:filter' element={<PostsPage />} />
-          <Route path= '/:r/:filter/:secondFilter' element={<PostsPage />} />
-          <Route path='/search/:searchQuery' element={<PostsPage />} />
-          <Route path='/r/:subreddit/comments/:postid/:description' element={<Post />} />
-          
-        </Routes>
+        <div className='app-content'>
+          <Routes>
+            <Route path='' element={<PostsPage />} />
+            <Route path='/:filter' element={<PostsPage />} />
+            <Route path='/:r/:filter' element={<PostsPage />} />
+            <Route path= '/:r/:filter/:secondFilter' element={<PostsPage />} />
+            <Route path='/search/:searchQuery' element={<PostsPage />} />
+            <Route path='/r/:subreddit/comments/:postid/:description' element={<Post />} />
+            
+          </Routes>
+        </div>
       </main>
       </div>
       
