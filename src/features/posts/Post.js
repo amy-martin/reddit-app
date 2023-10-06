@@ -23,7 +23,7 @@ export default function Post() {
     }, [dispatch, permalink])
 
     if (postIsLoading && commentsAreLoading) {
-        return <div className="loading-state"><h1>Loading...</h1></div>
+        return <div className='loading-container'><img src={'https://i.gifer.com/ZKZg.gif'} alt='Loading gif'/></div>
     }
 
     if (!postIsLoading && !postFailedToLoad && !commentsAreLoading && !commentsFailedToLoad && Object.keys(comments).length !== 0){

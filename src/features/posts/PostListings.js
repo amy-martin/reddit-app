@@ -24,7 +24,7 @@ export default function PostListings (props) {
         }
     }, [dispatch, filterSelection, searchQuery])
     if (postsAreLoading) {
-        return <div className="loading-state"><h1>Loading...</h1></div>
+        return <div className='loading-container'><img src={'https://i.gifer.com/ZKZg.gif'} alt='Loading gif'/></div>
     }
     return (
         <section className="post-container">
