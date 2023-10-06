@@ -12,10 +12,11 @@ export const retrieveComments = createAsyncThunk(
 export const commentsSlice = createSlice({
     name: 'comments',
     initialState: {
-        comments: {}
+        comments: {},
+        isLoadingComments: false,
+        failedToLoadComments: false,
     },
-    isLoadingComments: false,
-    failedToLoadComments: false,
+
     extraReducers: {
         [retrieveComments.pending]: (state) => {
             state.isLoadingComments = true;

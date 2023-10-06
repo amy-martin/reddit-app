@@ -194,12 +194,13 @@ a:active.post {
 
 .post-info {
   display: flex;
-  height: 20px;
+  height: 30px;
   align-items: baseline;
-  width: 100%
-  
+  width: 100%;
 }
-
+.post-info >* {
+  height: auto
+}
 .post-link {
   text-decoration: none;
 }
@@ -219,7 +220,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .post-content {
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+  
 }
 .post-title {
   padding-right: 10px;
@@ -276,7 +277,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
+  height: auto;
   
 }
 .link-post h1 {
