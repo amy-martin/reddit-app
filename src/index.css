@@ -260,6 +260,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 .media {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-self: center;
   align-items: center;
@@ -313,6 +314,22 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: auto
 }
 
-@media screen {
-  
+@media screen and (max-width:690px) {
+  .filter-bar {
+    min-width: 400px
+  }
+  .post, .comments-container, .search-bar {
+    width: 400px;
+  }
+
+  .media {
+    width: 350px;
+  }
+  .media-item {
+    max-width: 350px;
+  }
+
+  .link-post h1 {
+    width: 200px;
+  }
 }
