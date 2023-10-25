@@ -306,11 +306,11 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   align-items: center;
   justify-content: center;
   
-  padding-top:50%
+  padding-top:100px;
 }
 
 .loading-container img {
-  width: 8%;
+  width: 100px;
   height: auto
 }
 
