@@ -304,9 +304,15 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  padding-top:50%
 }
 
 .loading-container img {
-  width: 5%;
+  width: 8%;
   height: auto
+}
+
+@media screen {
+  
 }

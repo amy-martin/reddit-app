@@ -35,7 +35,7 @@ export const postSlice = createSlice({
     }
 })
 
-export const isLoadingPost = state => state.isLoadingPost;
-export const failedToLoadPost = state => state.failedToLoadPost;
+export const isLoadingPost = state => state.post.isLoadingPost;
+export const failedToLoadPost = state => state.post.failedToLoadPost;
 export default postSlice.reducer;
 export const selectPost = state => state.post.post

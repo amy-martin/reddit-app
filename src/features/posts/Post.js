@@ -21,8 +21,8 @@ export default function Post() {
         dispatch(retrievePost(permalink))
         dispatch(retrieveComments(permalink))
     }, [dispatch, permalink])
-
-    if (postIsLoading && commentsAreLoading) {
+    
+    if (postIsLoading || commentsAreLoading) {
         return <div className='loading-container'><img src={'https://i.gifer.com/ZKZg.gif'} alt='Loading gif'/></div>
     }
 
